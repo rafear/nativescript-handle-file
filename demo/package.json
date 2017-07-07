@@ -1,6 +1,6 @@
 {
   "nativescript": {
-    "id": "org.nativescript.demo",
+    "id": "org.handleplugin.test",
     "tns-ios": {
       "version": "2.5.0"
     },
@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "nativescript-handle-file": "file:///c:\\Projetos\\handle-file",
+    "nativescript-permissions": "latest",
     "nativescript-theme-core": "^1.0.2",
     "nativescript-unit-test-runner": "^0.3.4",
     "tns-core-modules": "~2.5.2"

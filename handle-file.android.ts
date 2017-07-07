@@ -25,15 +25,16 @@ export class HandleFile extends Common {
     public open(params: Params): void {
 
         let directoryDestiny: string = params.directory == undefined ? this.directories["downloads"] : this.directories[params.directory];
-        let androidDownloadsPath: any = android.os.Environment.getExternalStoragePublicDirectory(directoryDestiny).toString();
+
+        let androidDownloadsPath: any = global.android.os.Environment.getExternalStoragePublicDirectory(directoryDestiny).toString();
         let filePath: string = fs.path.join(androidDownloadsPath, params.name);
         var title: string = params.title == undefined ? "Open file..." : params.title;
 
         http.getFile(params.url, filePath).then((file: fs.File) => {
             try {
                 let intent = new android.content.Intent(android.content.Intent.ACTION_VIEW);
-                let extension = this.findExtension(file.extension);
-                intent.setDataAndType(android.net.Uri.fromFile(new java.io.File(file.path)), extension);
+                let mimeType = this.findExtension(file.extension);
+                intent.setDataAndType(android.net.Uri.fromFile(new java.io.File(file.path)), mimeType);
                 application.android.currentContext.startActivity(android.content.Intent.createChooser(intent, title));
 
             } catch (e) {
