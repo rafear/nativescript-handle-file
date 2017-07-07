@@ -1,4 +1,4 @@
-import {Observable} from 'data/observable';
+import {Observable, EventData} from 'data/observable';
 import {HandleFile} from 'nativescript-handle-file';
 
 export class HelloWorldModel extends Observable {
@@ -10,5 +10,15 @@ export class HelloWorldModel extends Observable {
 
     this.handleFile = new HandleFile();
     this.message = this.handleFile.message;
+  }
+
+
+  public checkMp3(event: EventData) {
+      this.handleFile.open({
+          name: "india-national-anthem.mp3",
+        url: "http://www.sample-videos.com/audio/mp3/india-national-anthem.mp3",
+        title: "",
+        directory: ""
+      })
   }
 }
