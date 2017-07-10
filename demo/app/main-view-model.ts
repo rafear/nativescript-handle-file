@@ -8,13 +8,13 @@ export class HelloWorldModel extends Observable {
 
   constructor() {
     super();
-    permissions.requestPermission(global.android.Manifest.permission.WRITE_EXTERNAL_STORAGE, "I need these permissions because I'm cool")
-          .then(function() {
-              console.log("Woo Hoo, I have the power!");
-          })
-          .catch(function() {
-              console.log("Uh oh, no permissions - plan B time!");
-          });
+    // permissions.requestPermission(global.android.Manifest.permission.WRITE_EXTERNAL_STORAGE, "I need these permissions because I'm cool")
+    //       .then(function() {
+    //           console.log("Woo Hoo, I have the power!");
+    //       })
+    //       .catch(function() {
+    //           console.log("Uh oh, no permissions - plan B time!");
+    //       });
     this.handleFile = new HandleFile();
     // this.message = this.handleFile.message;
   }
