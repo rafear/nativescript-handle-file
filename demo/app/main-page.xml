@@ -4,5 +4,9 @@
     <Label text="Handle File Test" class="t-20 text-center c-black" textWrap="true"/>
 
     <button text="Check mp3 file" ontap="{{ checkMp3 }}" />
+    <button text="Check xls file" ontap="{{ checkXls }}" />
+    <button text="Check pdf file" ontap="{{ checkPdf }}" />
+    <button text="Check mp4 file" ontap="{{ checkMp4 }}" />
+    <button text="Check Png file" ontap="{{ checkPng }}" />
   </StackLayout>
 </Page>

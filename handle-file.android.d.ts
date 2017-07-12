@@ -7,10 +7,10 @@ export interface Params {
 }
 export declare class HandleFile extends Common {
     readonly directories: {
-        "downloads": string;
-        "pictures": string;
-        "movies": string;
-        "music": string;
+        "downloads": any;
+        "pictures": any;
+        "movies": any;
+        "music": any;
     };
     open(params: Params): void;
     private findExtension(extension);
