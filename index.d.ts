@@ -1,13 +1,15 @@
-import { Common } from './handle-file.common';
+import { Observable } from 'data/observable';
 export interface Params {
     url: string;
     name: string;
     title?: string;
     directory?: string;
 }
-export declare class HandleFile extends Common {
-    // define your typings manually
-    // or..
-    // use take the ios or android .d.ts files and copy/paste them here
+
+export declare class HandleFile extends Observable {
+    /**
+     * Download the file and open
+     * @param params
+     */
     public open(params: Params): void;
 }

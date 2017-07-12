@@ -1,7 +1,7 @@
 import * as fs from "file-system";
 import * as application from "application";
 import * as  http from "http";
-import { Common } from './handle-file.common';
+import { Observable } from 'data/observable';
 
 export interface Params {
     url: string;
@@ -10,7 +10,7 @@ export interface Params {
     directory?: string;
 }
 
-export class HandleFile extends Common {
+export class HandleFile extends Observable {
     readonly directories = {
         "downloads" : android.os.Environment.DIRECTORY_DOWNLOADS,
         "pictures" : android.os.Environment.DIRECTORY_PICTURES,
@@ -18,14 +18,9 @@ export class HandleFile extends Common {
         "music": android.os.Environment.DIRECTORY_MUSIC
     };
 
-    /**
-     *
-     * @param Params params
-     */
     public open(params: Params): void {
 
         let directoryDestiny: string = params.directory == undefined ? this.directories["downloads"] : this.directories[params.directory];
-
         let androidDownloadsPath: any = global.android.os.Environment.getExternalStoragePublicDirectory(directoryDestiny).toString();
         let filePath: string = fs.path.join(androidDownloadsPath, params.name);
         var title: string = params.title == undefined ? "Open file..." : params.title;
