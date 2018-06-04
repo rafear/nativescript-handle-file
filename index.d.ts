@@ -11,5 +11,5 @@ export declare class HandleFile extends Observable {
      * Download the file and open
      * @param params
      */
-    public open(params: Params): void;
+    public open(params: Params): Promise<boolean>;
 }

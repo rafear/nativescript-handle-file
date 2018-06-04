@@ -11,16 +11,19 @@ export interface Params {
 }
 
 export class HandleFile extends Observable {
-    public open(params: Params): void {
-        http.getFile(params.url).then((file: fs.File) => {
+    public open(params: Params): Promise<boolean> {
+        return http.getFile(params.url).then(file => {
             try {
-                console.dir(file);
                 utils.ios.openFile(file.path);
             } catch (e) {
                 console.log(e);
+                return false;
             }
-        }, function (e: Error): void {
+            return true;
+        }, function (e: Error) {
             console.log(e);
-        });
+            return false;
+        }
+        );
     }
 }
