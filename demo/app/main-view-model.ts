@@ -1,4 +1,4 @@
-import {Observable, EventData} from 'data/observable';
+import {Observable, EventData} from 'tns-core-modules/data/observable';
 import {HandleFile} from 'nativescript-handle-file';
 import * as permissions from 'nativescript-permissions';
 
@@ -8,13 +8,6 @@ export class HelloWorldModel extends Observable {
 
   constructor() {
     super();
-    // permissions.requestPermission(global.android.Manifest.permission.WRITE_EXTERNAL_STORAGE, "I need these permissions because I'm cool")
-    //       .then(function() {
-    //           console.log("Woo Hoo, I have the power!");
-    //       })
-    //       .catch(function() {
-    //           console.log("Uh oh, no permissions - plan B time!");
-    //       });
     this.handleFile = new HandleFile();
     // this.message = this.handleFile.message;
   }
@@ -26,7 +19,7 @@ export class HelloWorldModel extends Observable {
         url: "http://www.sample-videos.com/audio/mp3/india-national-anthem.mp3",
         title: "Teste de download",
         directory: "downloads"
-      })
+      });
   }
 
     public checkPdf(event: EventData) {
@@ -35,7 +28,7 @@ export class HelloWorldModel extends Observable {
             url: "http://www.sample-videos.com/pdf/Sample-pdf-5mb.pdf",
             title: "Teste de download",
             directory: "downloads"
-        })
+        });
     }
 
     public checkXls(event: EventData) {
@@ -44,7 +37,7 @@ export class HelloWorldModel extends Observable {
             url: "http://www.sample-videos.com/xls/Sample-Spreadsheet-10-rows.xls",
             title: "Teste de download",
             directory: "downloads"
-        })
+        });
     }
 
     public checkMp4(event: EventData) {
@@ -53,7 +46,7 @@ export class HelloWorldModel extends Observable {
             url: "http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_5mb.mp4",
             title: "Teste de download",
             directory: "downloads"
-        })
+        });
     }
 
     public checkPng(event: EventData) {
@@ -62,7 +55,7 @@ export class HelloWorldModel extends Observable {
             url: "https://logodownload.org/wp-content/uploads/2015/05/internacional-porto-alegre-logo-escudo-3.png",
             title: "Teste de download",
             directory: "downloads"
-        })
+        });
     }
 
 
