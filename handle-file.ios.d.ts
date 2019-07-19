@@ -1,4 +1,4 @@
-import { Observable } from 'data/observable';
+import { Observable } from 'tns-core-modules/data/observable';
 export interface Params {
     url: string;
     name: string;

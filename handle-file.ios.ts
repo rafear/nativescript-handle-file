@@ -1,7 +1,7 @@
-import * as fs from "file-system";
-import * as http from "http";
-import * as utils from "tns-core-modules/utils/utils";
-import { Observable } from 'data/observable';
+import * as fs from 'tns-core-modules/file-system';
+import * as http from 'tns-core-modules/http';
+import * as utils from 'tns-core-modules/utils/utils';
+import { Observable } from 'tns-core-modules/data/observable';
 
 export interface Params {
     url: string;
